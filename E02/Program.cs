@@ -4,7 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string cosas = @"D:\Cosas";
+            string otrasCosas = $@"{cosas}\Otras cosas";
+
+            if (!Path.Exists(cosas))
+            {
+                Directory.CreateDirectory(otrasCosas);
+                Console.WriteLine(otrasCosas + " creada el día: " + Directory.GetCreationTime(otrasCosas));
+            }
+            else
+            {
+                Console.WriteLine("Ya existe");
+            }
+            //Así lo puedo probar exista o no
+            Directory.Delete(cosas, true);
         }
     }
 }
