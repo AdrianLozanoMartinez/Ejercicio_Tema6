@@ -12,7 +12,6 @@ namespace Ej06
             Encoding encoding = Encoding.UTF8;
             using (Stream stream = new FileStream(archivo, FileMode.Create))
             {
-                //byte[] datosByte = System.Text.Encoding.UTF8.GetBytes(texto);
                 byte[] datosByte = encoding.GetBytes(texto);
                 stream.Write(datosByte, 0, datosByte.Length);
             }
